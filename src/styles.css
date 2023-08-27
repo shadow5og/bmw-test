@@ -1,13 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: BMWTypeNextProTT-Bold;
+  src: url(./assets/font/BMWTypeNextProTT-Bold.ttf);
+}
+
+@font-face {
+  font-family: BMWTypeNextProTT-Light;
+  src: url(./assets/font/BMWTypeNextProTT-Light.ttf);
+}
+
+@font-face {
+  font-family: BMWTypeNextProTT-Medium;
+  src: url(./assets/font/BMWTypeNextProTT-Medium.ttf);
+}
+
+@font-face {
+  font-family: BMWTypeNextProTT-Regular;
+  src: url(./assets/font/BMWTypeNextProTT-Regular.ttf);
+}
+
+@font-face {
+  font-family: BMWTypeNextProTT-Thin;
+  src: url(./assets/font/BMWTypeNextProTT-Thin.ttf);
+}
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: BMWTypeNextProTT-Regular, Arial, Helvetica, Roboto, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: white;
+
+  --anthracite: #262626;
+  --grey-1: #4d4d4d;
+  --grey-2: #666666;
+  --grey-3: #8e8e8e;
+  --grey-4: #e6e6e6;
+  --grey-5: #f2f2f2;
+  --grey-6: #f6f6f6;
+  --grey-7: #4d4d4d;
+  --grey-8: #e6e6e6;
+
+  --primary-color: #1c69d4; /* blue 2 as per CI */
+  --primary-effect: #0653b6; /* blue 1 as per CI */
+  --light-blue: rgba(28, 105, 212, 0.3); /* blue 3 as per CI */
+  --accent-blue: #1f94ff; /* blue 4 as per CI */
+
+  --copy-color: var(--anthracite);
+  --secodary-heading-color: #666;
+
+  --danger: #d20000;
+  --warning: #ffad1f;
+  --success: #3db014;
+
+  box-sizing: border-box;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,12 +66,21 @@
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-family: BMWTypeNextProTT-Bold;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--copy-color);
+  line-height: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--primary-color);
+}
+
+.px {
+  padding-left: 23px;
+  padding-right: 23px;
 }
 
 body {
@@ -38,30 +96,98 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  color: var(--copy-color);
+  text-transform: uppercase;
+}
+
+h2 .headline {
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 7.5rem;
+  font-family: BMWTypeNextProTT-Thin;
+  color: white;
+}
+
+h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  color: var(--secodary-heading-color);
+}
+
+h4 {
+  color: var(--copy-color);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  vertical-align: bottom;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--copy-color);
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 52px;
+  border-radius: 3px;
+  padding: 0.25rem;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: BMWTypeNextProTT-Bold;
+  line-height: 1.25rem;
+  word-break: break-word;
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: var(--primary-effect);
 }
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto var(--light-blue);
+}
+
+button .secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+button .secondary:hover {
+  background-color: transparent;
+  border-width: 2px;
 }
 
 .card {
   padding: 2em;
 }
 
-@media (prefers-color-scheme: light) {
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -72,4 +198,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */

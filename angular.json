@@ -14,7 +14,10 @@
           "options": {
             "configFile": "vite.config.ts",
             "main": "src/main.ts",
-            "outputPath": "dist/client"
+            "outputPath": "dist/client",
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ]
           },
           "defaultConfiguration": "production",
           "configurations": {
@@ -49,5 +52,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "3ffe3cbb-4047-40fa-aabd-ddef3c63ce8d"
   }
 }

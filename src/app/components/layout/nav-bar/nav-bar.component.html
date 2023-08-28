@@ -1,0 +1,79 @@
+<ul
+  ngbNav
+  #nav="ngbNav"
+  [(activeId)]="active"
+  class="nav-link d-flex flex-row nav"
+  orientation="horizontal"
+>
+  <li [ngbNavItem]="-1" class="d-flex align-items-center">
+    <a ngbNavLink href="https://bmw.co.za" class="navbar-brand"
+      ><img
+        src="https://cloud.appwrite.io/v1/storage/buckets/64ea897682fcadc709da/files/64eb8cd5d80c1b510ec4/view?project=567&mode=admin"
+        alt="BMW Logo"
+        style="aspect-ratio: 1/1; width: 52px"
+    /></a>
+  </li>
+  <li
+    *ngFor="let link of links; let i = index"
+    [ngbNavItem]="i"
+    class="d-flex align-items-sm-center"
+  >
+    <a ngbNavLink [href]="link?.href ?? '#'"
+      ><span ngbNavLink>{{ link.name }}</span></a
+    >
+    <ng-template
+      [ngIf]="link?.data && active === i && activeId === 'active'"
+      ngbNavContent
+      >{{ i }}</ng-template
+    >
+  </li>
+</ul>
+<!-- <div [ngbNavOutlet]="nav" class="ms-4"></div> -->
+
+<!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
+  <div
+    class="container-fluid"
+    style="display: flex; list-style: none; position: fixed; top: 0; padding: 0"
+  >
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarBasic"
+      aria-controls="navbarBasic"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarBasic">
+      <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link disabled"
+            href="#"
+            tabindex="-1"
+            aria-disabled="true"
+            >Disabled</a
+          >
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav> -->

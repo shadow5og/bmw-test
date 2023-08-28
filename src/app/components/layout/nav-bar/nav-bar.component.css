@@ -1,0 +1,44 @@
+ul {
+  display: flex;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  padding: 0;
+  border-bottom: 1px solid white;
+  height: 85px;
+  width: 83%;
+}
+
+ul li {
+  margin-right: 30px;
+  width: 100%;
+  display: flex !important;
+  align-items: stretch;
+  border-bottom: 5px transparent solid;
+  width: max-content;
+}
+
+ul li:hover {
+  border-bottom: 5px var(--primary-color) solid;
+}
+
+ul li:first-child {
+  margin-right: 45px;
+  border-bottom: 0px;
+}
+
+ul li img {
+  object-fit: contain;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+}
+
+ul li a span {
+  font-family: var(--bmw-bold);
+  font-size: 1rem;
+  color: white;
+  /* width: max-content; */
+}

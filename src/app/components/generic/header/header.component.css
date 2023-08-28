@@ -1,0 +1,30 @@
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  color: var(--copy-color);
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  padding: 1rem var(--padding-x) 0px var(--padding-x);
+}
+
+header h2 {
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  header {
+    align-items: start;
+    height: 630px;
+    padding: 1rem 120px;
+  }
+}
+
+@media (min-width: 1536px) {
+  header {
+    height: 840px;
+  }
+}

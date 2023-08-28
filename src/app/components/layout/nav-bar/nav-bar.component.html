@@ -21,11 +21,6 @@
     <a ngbNavLink [href]="link?.href ?? '#'"
       ><span ngbNavLink>{{ link.name }}</span></a
     >
-    <ng-template
-      [ngIf]="link?.data && active === i && activeId === 'active'"
-      ngbNavContent
-      >{{ i }}</ng-template
-    >
   </li>
 </ul>
 <!-- <div [ngbNavOutlet]="nav" class="ms-4"></div> -->

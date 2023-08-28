@@ -312,6 +312,10 @@ img {
 }
 
 @media (min-width: 1536px) {
+  :root {
+    --padding-x: 120px;
+  }
+
   h2 {
     font-size: 4rem;
     line-height: 5rem;

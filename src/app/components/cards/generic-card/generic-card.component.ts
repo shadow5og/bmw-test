@@ -1,11 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonWrapperComponent } from '../../containers/button-wrapper/button-wrapper.component';
 import { SecondaryButtonComponent } from '../../buttons/secondary-button/secondary-button.component';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'genreric-card',
+  selector: 'generic-card',
   standalone: true,
   template: `
     <div style="display: flex; flex-direction: column; align-items: center">
@@ -22,10 +21,17 @@ import { Router } from '@angular/router';
       >
     </div>
   `,
-  styleUrls: ['./genreric-card.component.css'],
+  styles: [
+    `
+      button-wrapper,
+      button-wrapper secondary-button {
+        width: 100%;
+      }
+    `,
+  ],
   imports: [CommonModule, ButtonWrapperComponent, SecondaryButtonComponent],
 })
-export class GenrericCardComponent {
+export class GenericCardComponent implements OnInit {
   @Input() src =
     'https://bmw.scene7.com/is/image/BMW/NxW_Home_ICON_STOCK_CAR?wid=1504&hei=542';
   @Input() alt = 'BMW Car icon';
@@ -33,10 +39,11 @@ export class GenrericCardComponent {
   @Input() ctaText = 'Search Now';
   @Input() ctaLink = 'https://buy.bmw.co.za/';
 
-  constructor(private router: Router) {}
-
   goToLink() {
-    window.location.href = this.ctaLink;
-    // this.router.navigateByUrl(this.ctaLink);
+    window.open(this.ctaLink ?? 'https://buy.bmw.co.za/', '_blank');
+  }
+
+  ngOnInit(): void {
+    console.log(this.subtitle);
   }
 }

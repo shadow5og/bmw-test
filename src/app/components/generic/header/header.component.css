@@ -15,11 +15,17 @@ header h2 {
   color: white;
 }
 
+@media (min-width: 768px) {
+  header button-wrapper primary-button {
+    margin-right: 1.5rem;
+  }
+}
+
 @media (min-width: 1024px) {
   header {
     align-items: start;
     height: 630px;
-    padding: 1rem 120px;
+    padding: 1rem var(--padding-x);
   }
 }
 

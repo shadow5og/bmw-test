@@ -5,16 +5,14 @@ import { CommonModule } from '@angular/common';
   selector: 'primary-button',
   standalone: true,
   imports: [CommonModule],
-  template: ` <button
-    [ngStyle]="styling"
-    [style]="style"
-    (click)="handleClick()"
-  >
-    <ng-content />
-  </button>`,
+  template: `
+    <button [ngStyle]="styling" [style]="style" (click)="handleClick()">
+      <ng-content />
+    </button>
+  `,
   styles: [
     `
-      width: 100%;
+      /* width: 100%; */
     `,
   ],
 })

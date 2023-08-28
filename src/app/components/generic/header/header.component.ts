@@ -31,10 +31,10 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   navigateToSearchPage() {
-    window.location.href = this.searchLink;
+    window.open(this.searchLink, '_blank');
   }
 
   navigateToMore() {
-    window.location.href = this.exploreMoreLink;
+    window.open(this.exploreMoreLink, '_blank');
   }
 }

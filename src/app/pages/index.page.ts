@@ -14,14 +14,21 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { ExploreButtonsComponent } from '../components/buttons/explore-buttons/explore-buttons.component';
 import { NewBmwSectionComponent } from '../components/sections/new-bmw-section/new-bmw-section.component';
+import { VideoCtaSectionComponent } from '../components/sections/video-cta-section/video-cta-section.component';
+import { DividerComponent } from '../components/layput/divider/divider.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   template: `
-    <app-header />
-    <find-your-bmw-section />
-    <new-bmw-section />
+    <main class="bg-transperant">
+      <app-header />
+      <find-your-bmw-section />
+      <video-cta-section />
+      <divider />
+      <new-bmw-section />
+      <divider />
+    </main>
   `,
   styles: [``],
   imports: [
@@ -36,6 +43,8 @@ import { NewBmwSectionComponent } from '../components/sections/new-bmw-section/n
     NgbDatepickerModule,
     ExploreButtonsComponent,
     NewBmwSectionComponent,
+    VideoCtaSectionComponent,
+    DividerComponent,
   ],
 })
 export default class HomeComponent implements OnInit {

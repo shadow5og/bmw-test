@@ -16,6 +16,7 @@ import { ExploreButtonsComponent } from '../../buttons/explore-buttons/explore-b
       class="d-flex position-relative flex-column align-items-centter justify-content-end align-items-lg-start overflow-hidden pt-3 pb-0 px"
     >
       <background-filter />
+      <background-filter [isTopFilter]="false" class="d-none d-xl-block" />
       <background-image
         src="https://bmw.scene7.com/is/image/BMW/home-electric-promo:16to7?fmt=webp&wid=2560&hei=1120"
         alt="BMW cars"

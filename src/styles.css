@@ -40,7 +40,7 @@
   --bmw-bold: BMWTypeNextProTT-Bold;
 
   --anthracite: #262626;
-  --opaque-antricite: #26262641;
+  --opaque-antricite: #26262677;
   --grey-1: #4d4d4d;
   --grey-2: #666666;
   --grey-3: #8e8e8e;
@@ -264,8 +264,8 @@ img {
   z-index: -1;
   background-image: linear-gradient(
     to bottom,
-    var(--opaque-antricite) 7%,
-    transparent 15%
+    var(--opaque-antricite) 3%,
+    transparent 20%
   );
 }
 

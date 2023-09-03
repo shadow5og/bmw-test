@@ -12,6 +12,8 @@ import {
   NgbOffcanvas,
   OffcanvasDismissReasons,
 } from '@ng-bootstrap/ng-bootstrap';
+import { ExploreButtonsComponent } from '../components/buttons/explore-buttons/explore-buttons.component';
+import { NewBmwSectionComponent } from '../components/sections/new-bmw-section/new-bmw-section.component';
 
 @Component({
   selector: 'app-home',
@@ -19,68 +21,7 @@ import {
   template: `
     <app-header />
     <find-your-bmw-section />
-    <section
-      class="px"
-      style="height: 510px; widith: 100vw; position: relative"
-    >
-      <background-image
-        src="https://bmw.scene7.com/is/image/BMW/ix1-4000x3000:3to1?fmt=webp&wid=2560&hei=853"
-        alt="BMW cars"
-      />
-    </section>
-
-    <ng-template #content let-offcanvas>
-      <div class="offcanvas-header">
-        <h4 class="offcanvas-title" id="offcanvas-basic-title">
-          Profile update
-        </h4>
-        <button
-          type="button"
-          class="btn-close"
-          aria-label="Close"
-          (click)="offcanvas.dismiss('Cross click')"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <form>
-          <div class="mb-3">
-            <label for="dateOfBirth">Date of birth</label>
-            <div class="input-group">
-              <input
-                id="dateOfBirth"
-                class="form-control"
-                placeholder="yyyy-mm-dd"
-                name="dp"
-                ngbDatepicker
-                #dp="ngbDatepicker"
-              />
-              <button
-                class="btn btn-outline-secondary bi bi-calendar3"
-                (click)="dp.toggle()"
-                type="button"
-              ></button>
-            </div>
-          </div>
-        </form>
-        <div class="text-end">
-          <button
-            type="button"
-            class="btn btn-outline-dark"
-            (click)="offcanvas.close('Save click')"
-          >
-            Save
-          </button>
-        </div>
-      </div>
-    </ng-template>
-
-    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-      Launch demo offcanvas
-    </button>
-
-    <hr />
-
-    <pre>{{ closeResult }}</pre>
+    <new-bmw-section />
   `,
   styles: [``],
   imports: [
@@ -93,6 +34,8 @@ import {
     FindYourBmwSectionComponent,
     BackgroundImageComponent,
     NgbDatepickerModule,
+    ExploreButtonsComponent,
+    NewBmwSectionComponent,
   ],
 })
 export default class HomeComponent implements OnInit {

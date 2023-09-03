@@ -1,7 +1,7 @@
 header {
   color: var(--copy-color);
   height: 100dvh;
-  width: 100vw;
+  width: 100dvw;
 }
 
 header h2 {
@@ -30,6 +30,6 @@ header h2 {
 
 @media (min-width: 1024px) {
   header button-wrapper {
-    margin-top: 50px !important;
+    margin-top: 30px !important;
   }
 }

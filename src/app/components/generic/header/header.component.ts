@@ -4,9 +4,9 @@ import { BackgroundImageComponent } from '../background-image/background-image.c
 import { BackgroundFilterComponent } from '../background-filter/background-filter.component';
 import { PrimaryButtonComponent } from '../../buttons/primary-button/primary-button.component';
 import { SecondaryButtonComponent } from '../../buttons/secondary-button/secondary-button.component';
-import { Router } from '@angular/router';
 import { ButtonWrapperComponent } from '../../containers/button-wrapper/button-wrapper.component';
 import { NavBarComponent } from '../../layout/nav-bar/nav-bar.component';
+import { ExploreButtonsComponent } from '../../buttons/explore-buttons/explore-buttons.component';
 
 @Component({
   selector: 'app-header',
@@ -23,14 +23,7 @@ import { NavBarComponent } from '../../layout/nav-bar/nav-bar.component';
       <h3 class="subtitle">BMW 100% ELECTRIC CARS</h3>
       <h2>STARTING FROM</h2>
       <h2>R19 799/MONTH.*</h2>
-      <button-wrapper class="button-wrapper mt-4">
-        <primary-button [onClick]="navigateToSearchPage" class="me-sm-4">
-          Search Available Cars
-        </primary-button>
-        <secondary-button [onClick]="navigateToMore"
-          >Explore More</secondary-button
-        >
-      </button-wrapper>
+      <explore-buttons class="mt-3 mt-md-4 mt-lg-5" />
     </header>
   `,
   styleUrls: ['./header.component.css'],
@@ -42,20 +35,7 @@ import { NavBarComponent } from '../../layout/nav-bar/nav-bar.component';
     SecondaryButtonComponent,
     ButtonWrapperComponent,
     NavBarComponent,
+    ExploreButtonsComponent,
   ],
 })
-export class HeaderComponent {
-  searchLink = 'https://www.bmw.co.za/en/forms/BMW-BEV-Deeplink.html';
-  exploreMoreLink =
-    'https://www.bmw.co.za/en/topics/fascination-bmw/electromobility2020-new/electric-cars.html';
-
-  constructor(private router: Router) {}
-
-  navigateToSearchPage() {
-    window.open(this.searchLink, '_blank');
-  }
-
-  navigateToMore() {
-    window.open(this.exploreMoreLink, '_blank');
-  }
-}
+export class HeaderComponent {}

@@ -1,8 +1,19 @@
 nav {
+  display: block;
   z-index: 10;
+  font-family: var(--bmw-light);
+  width: 20vw;
 }
 
-nav ul {
+nav p span {
+  font-family: var(--bmw-bold);
+}
+
+nav div div a {
+  border-bottom: 4px transparent solid;
+}
+
+nav div ul {
   display: flex;
   list-style: none;
   top: 0;
@@ -11,28 +22,28 @@ nav ul {
   width: 83%;
 }
 
-nav ul li {
+nav div ul li {
   width: 100%;
   display: flex !important;
   align-items: stretch;
-  border-bottom: 5px transparent solid;
+  border-bottom: 4px transparent solid;
   width: max-content;
 }
 
-nav ul li:hover {
-  border-bottom: 5px var(--primary-color) solid;
+nav div ul li:hover {
+  border-bottom-color: var(--primary-color);
 }
 
-nav ul li img {
+nav div ul li img {
   object-fit: contain;
 }
 
-nav ul li a {
+nav div ul li a {
   display: flex;
   align-items: center;
 }
 
-nav ul li a span {
+nav div ul li a span {
   font-family: var(--bmw-bold);
   font-size: 1rem;
   color: white;
@@ -40,7 +51,7 @@ nav ul li a span {
 }
 
 @media (min-width: 1200px) {
-  nav div:first-child {
+  nav div div:first-child {
     border-bottom: white solid 1px;
   }
 }

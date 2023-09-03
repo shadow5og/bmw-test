@@ -6,7 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <button [ngStyle]="styling" [style]="style" (click)="handleClick()">
+    <button
+      class="custom-button"
+      [ngStyle]="styling"
+      [style]="style"
+      (click)="handleClick()"
+    >
       <ng-content />
     </button>
   `,

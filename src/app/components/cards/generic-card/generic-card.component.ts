@@ -7,28 +7,18 @@ import { SecondaryButtonComponent } from '../../buttons/secondary-button/seconda
   selector: 'generic-card',
   standalone: true,
   template: `
-    <div style="display: flex; flex-direction: column; align-items: center">
+    <div class="d-flex flex-column align-items-center">
       <img [src]="src" [alt]="alt" style="max-width: 348px" />
       <h4>{{ subtitle }}</h4>
-      <button-wrapper
-        class="button-wrapper"
-        style="width: 100%; display: flex; justify-content: center; margin-top: 0"
-        ><secondary-button
-          [onClick]="goToLink"
-          style="border-color: black; color: black"
-          >{{ ctaText }}</secondary-button
-        ></button-wrapper
+      <secondary-button
+        [onClick]="goToLink"
+        style="border-color: black; color: black"
+        class="w-100 px-3 w-auto"
+        >{{ ctaText }}</secondary-button
       >
     </div>
   `,
-  styles: [
-    `
-      button-wrapper,
-      button-wrapper secondary-button {
-        width: 100%;
-      }
-    `,
-  ],
+  styles: [``],
   imports: [CommonModule, ButtonWrapperComponent, SecondaryButtonComponent],
 })
 export class GenericCardComponent implements OnInit {

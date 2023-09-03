@@ -1,27 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: BMWTypeNextProTT-Bold;
-  src: url(./assets/font/BMWTypeNextProTT-Bold.ttf);
+  src: url(/font/BMWTypeNextProTT-Bold.ttf);
 }
 
 @font-face {
   font-family: BMWTypeNextProTT-Light;
-  src: url(./assets/font/BMWTypeNextProTT-Light.ttf);
+  src: url(/font/BMWTypeNextProTT-Light.ttf);
 }
 
 @font-face {
   font-family: BMWTypeNextProTT-Medium;
-  src: url(./assets/font/BMWTypeNextProTT-Medium.ttf);
+  src: url(/font/BMWTypeNextProTT-Medium.ttf);
 }
 
 @font-face {
   font-family: BMWTypeNextProTT-Regular;
-  src: url(./assets/font/BMWTypeNextProTT-Regular.ttf);
+  src: url(/font/BMWTypeNextProTT-Regular.ttf);
 }
 
 @font-face {
   font-family: BMWTypeNextProTT-Thin;
-  src: url(./assets/font/BMWTypeNextProTT-Thin.ttf);
+  src: url(/font/BMWTypeNextProTT-Thin.ttf);
 }
 
 :root {
@@ -80,16 +80,16 @@
   box-sizing: border-box;
 }
 
-a {
+.a {
   font-family: BMWTypeNextProTT-Bold;
   font-weight: 700;
   font-size: 0.75rem;
   color: var(--copy-color);
   line-height: 1rem;
   text-decoration: none;
-  transition: color 1s cubic-bezier(0.8, 0, 0.18, 1);
+  transition: color 1s var(--bmw-timing);
 }
-a:hover {
+.a:hover {
   color: var(--primary-color);
 }
 
@@ -104,14 +104,17 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: transparent;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: var(--bmw-light);
 }
 
 h2 {
+  font-family: var(--bmw-light);
   margin-top: 8px;
   margin-bottom: 0;
   font-size: 2rem;
@@ -171,7 +174,7 @@ p {
   line-height: 1.5rem;
 }
 
-button {
+.custom-button {
   all: unset;
   background-color: var(--primary-color);
   color: #fff;
@@ -199,11 +202,11 @@ button {
   margin-bottom: 1rem;
   width: 100%;
 }
-button:hover {
+.custom-button:hover {
   background-color: var(--primary-effect);
 }
-button:focus,
-button:focus-visible {
+.custom-button:focus,
+.custom-button:focus-visible {
   /* outline: 4px auto var(--light-blue); */
 }
 
@@ -274,7 +277,7 @@ img {
 
 /* tablets */
 @media (min-width: 640px) {
-  button {
+  .custom-button {
     /* margin-right: 1.5rem; */
     /* min-width: max-content; */
   }
@@ -290,7 +293,7 @@ img {
     --padding-x: 3rem;
   }
 
-  button {
+  .custom-button {
     width: 263px;
     width: 206px;
     padding: 0.25rem;

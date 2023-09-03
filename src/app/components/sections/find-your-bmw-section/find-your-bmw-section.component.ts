@@ -5,7 +5,22 @@ import { GenericCardComponent } from '../../cards/generic-card/generic-card.comp
 @Component({
   selector: 'find-your-bmw-section',
   standalone: true,
-  templateUrl: './find-your-bmw-section.component.html',
+  template: `
+    <section class="px">
+      <h3>Shopping tools</h3>
+      <h2 style="padding-left: 20%; padding-right: 20%">Find Your BMW.</h2>
+      <div class="generic-wrapper">
+        <generic-card
+          *ngFor="let card of cards"
+          [src]="card.src"
+          [subtitle]="card.subtitle"
+          [alt]="card.alt"
+          [ctaText]="card.ctaText"
+          [ctaLink]="card.ctaLink"
+        />
+      </div>
+    </section>
+  `,
   styleUrls: ['./find-your-bmw-section.component.css'],
   imports: [CommonModule, GenericCardComponent],
 })

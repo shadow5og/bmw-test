@@ -1,38 +1,46 @@
-<ul
-  ngbNav
-  #nav="ngbNav"
-  [(activeId)]="active"
-  class="nav-link d-flex flex-row nav"
-  orientation="horizontal"
+<!-- <nav>
+  <ul
+    ngbNav
+    #nav="ngbNav"
+    [(activeId)]="active"
+    class="nav-link d-flex flex-row"
+    orientation="horizontal"
+  >
+    <li class="d-flex align-items-center">
+      <a href="https://bmw.co.za" class="navbar-brand"
+        ><img
+          src="https://cloud.appwrite.io/v1/storage/buckets/64ea897682fcadc709da/files/64eb8cd5d80c1b510ec4/view?project=567&mode=admin"
+          alt="BMW Logo"
+          style="aspect-ratio: 1/1; width: 52px"
+      /></a>
+    </li>
+    <li
+      *ngFor="let link of links; let i = index"
+      [ngbNavItem]="i"
+      class="d-flex align-items-sm-center"
+    >
+      <a class="a" [href]="link?.href ?? '#'"
+        ><span ngbNavLink class="a" style="color: white">{{
+          link.name
+        }}</span></a
+      >
+    </li>
+  </ul>
+</nav> -->
+<!-- <div [ngbNavOutlet]="nav" class="ms-4"></div> -->
+
+<nav
+  class="navbar navbar-expand-xl navbar-light py-0 px position-absolute d-flex justify-items-center w-100 pt-3 pt-xl-0"
 >
-  <li [ngbNavItem]="-1" class="d-flex align-items-center">
-    <a ngbNavLink href="https://bmw.co.za" class="navbar-brand"
+  <div class="container-fluid d-flex px-0">
+    <a href="https://bmw.co.za" class="navbar-brand me-4"
       ><img
         src="https://cloud.appwrite.io/v1/storage/buckets/64ea897682fcadc709da/files/64eb8cd5d80c1b510ec4/view?project=567&mode=admin"
         alt="BMW Logo"
         style="aspect-ratio: 1/1; width: 52px"
     /></a>
-  </li>
-  <li
-    *ngFor="let link of links; let i = index"
-    [ngbNavItem]="i"
-    class="d-flex align-items-sm-center"
-  >
-    <a ngbNavLink [href]="link?.href ?? '#'"
-      ><span ngbNavLink>{{ link.name }}</span></a
-    >
-  </li>
-</ul>
-<!-- <div [ngbNavOutlet]="nav" class="ms-4"></div> -->
-
-<!-- <nav class="navbar navbar-expand-xl navbar-light bg-light">
-  <div
-    class="container-fluid"
-    style="display: flex; list-style: none; position: fixed; top: 0; padding: 0"
-  >
-    <a class="navbar-brand" href="#">Navbar</a>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler border-0"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarBasic"
@@ -44,19 +52,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarBasic">
       <ul class="navbar-nav me-auto mb-2 mb-xl-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link disabled"
-            href="#"
-            tabindex="-1"
-            aria-disabled="true"
-            >Disabled</a
+        <li
+          *ngFor="let link of links; let i = index"
+          class="d-flex align-items-sm-center px-3"
+        >
+          <a class="a" [href]="link?.href ?? '#'"
+            ><span class="a" style="color: white; font-size: 1rem">{{
+              link.name
+            }}</span></a
           >
         </li>
       </ul>
@@ -71,4 +74,4 @@
       </form>
     </div>
   </div>
-</nav> -->
+</nav>

@@ -6,37 +6,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div>
+    <div
+      class="d-flex flex-column justify-content-center align-items-stretch flex-sm-row align-items-sm-center justify-content-lg-start mt-lg-[50px]"
+    >
       <ng-content />
     </div>
   `,
-  styles: [
-    `
-      div {
-        margin-top: 25px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
-        /* width: 100%; */
-      }
-
-      @media (min-width: 640px) {
-        div {
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          /* width: max-content; */
-        }
-      }
-
-      @media (min-width: 1024px) {
-        div {
-          justify-content: start;
-          margin-top: 50px;
-        }
-      }
-    `,
-  ],
+  styles: [``],
 })
 export class ButtonWrapperComponent {}

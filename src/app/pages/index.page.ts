@@ -7,6 +7,11 @@ import { GenericCardComponent } from '../components/cards/generic-card/generic-c
 import { CommonModule } from '@angular/common';
 import { FindYourBmwSectionComponent } from '../components/sections/find-your-bmw-section/find-your-bmw-section.component';
 import { BackgroundImageComponent } from '../components/generic/background-image/background-image.component';
+import {
+  NgbDatepickerModule,
+  NgbOffcanvas,
+  OffcanvasDismissReasons,
+} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -23,6 +28,59 @@ import { BackgroundImageComponent } from '../components/generic/background-image
         alt="BMW cars"
       />
     </section>
+
+    <ng-template #content let-offcanvas>
+      <div class="offcanvas-header">
+        <h4 class="offcanvas-title" id="offcanvas-basic-title">
+          Profile update
+        </h4>
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Close"
+          (click)="offcanvas.dismiss('Cross click')"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <form>
+          <div class="mb-3">
+            <label for="dateOfBirth">Date of birth</label>
+            <div class="input-group">
+              <input
+                id="dateOfBirth"
+                class="form-control"
+                placeholder="yyyy-mm-dd"
+                name="dp"
+                ngbDatepicker
+                #dp="ngbDatepicker"
+              />
+              <button
+                class="btn btn-outline-secondary bi bi-calendar3"
+                (click)="dp.toggle()"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </form>
+        <div class="text-end">
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            (click)="offcanvas.close('Save click')"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </ng-template>
+
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+      Launch demo offcanvas
+    </button>
+
+    <hr />
+
+    <pre>{{ closeResult }}</pre>
   `,
   styles: [``],
   imports: [
@@ -34,10 +92,37 @@ import { BackgroundImageComponent } from '../components/generic/background-image
     GenericCardComponent,
     FindYourBmwSectionComponent,
     BackgroundImageComponent,
+    NgbDatepickerModule,
   ],
 })
 export default class HomeComponent implements OnInit {
   count = 0;
+  closeResult = '';
+
+  constructor(private offcanvasService: NgbOffcanvas) {}
+
+  open(content: any) {
+    this.offcanvasService
+      .open(content, { ariaLabelledBy: 'offcanvas-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === OffcanvasDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === OffcanvasDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on the backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
 
   increment() {
     this.count++;

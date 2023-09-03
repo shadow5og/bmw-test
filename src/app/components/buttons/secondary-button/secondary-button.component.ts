@@ -8,7 +8,7 @@ import { PrimaryButtonComponent } from '../primary-button/primary-button.compone
   imports: [CommonModule],
   template: `
     <button
-      class="secondary-ci-button"
+      class="custom-button secondary-ci-button"
       [ngStyle]="styling"
       (click)="handleClick()"
       [style]="style"

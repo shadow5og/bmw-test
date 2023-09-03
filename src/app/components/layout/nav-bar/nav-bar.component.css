@@ -1,16 +1,17 @@
-ul {
+nav {
+  z-index: 10;
+}
+
+nav ul {
   display: flex;
   list-style: none;
-  position: absolute;
   top: 0;
   padding: 0;
-  border-bottom: 1px solid white;
   height: 85px;
   width: 83%;
 }
 
-ul li {
-  margin-right: 30px;
+nav ul li {
   width: 100%;
   display: flex !important;
   align-items: stretch;
@@ -18,27 +19,28 @@ ul li {
   width: max-content;
 }
 
-ul li:hover {
+nav ul li:hover {
   border-bottom: 5px var(--primary-color) solid;
 }
 
-ul li:first-child {
-  margin-right: 45px;
-  border-bottom: 0px;
-}
-
-ul li img {
+nav ul li img {
   object-fit: contain;
 }
 
-ul li a {
+nav ul li a {
   display: flex;
   align-items: center;
 }
 
-ul li a span {
+nav ul li a span {
   font-family: var(--bmw-bold);
   font-size: 1rem;
   color: white;
   /* width: max-content; */
+}
+
+@media (min-width: 1200px) {
+  nav div:first-child {
+    border-bottom: white solid 1px;
+  }
 }

@@ -17,7 +17,9 @@ import { BackgroundFilterComponent } from '../../generic/background-filter/backg
       <h3 class="text-white">
         A LUXURY CLASS VEHICLE WITH A LIFESTYLE TO MATCH
       </h3>
-      <h2 class="text-white">BMW Excellence Club</h2>
+      <h2 class="text-white" style="text-transform: none;">
+        BMW Excellence Club
+      </h2>
       <h4 class="bigger-subtitle text-white text-lg-start">
         Experience being part of a complimentary members club exclusively for
         BMW luxury class owners.

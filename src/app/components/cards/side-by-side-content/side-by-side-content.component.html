@@ -1,0 +1,28 @@
+<div class="d-flex flex-column">
+  <div class="mb-5">
+    <ng-content *ngIf="!isImage"></ng-content>
+    <img
+      *ngIf="isImage"
+      [src]="src"
+      [alt]="alt"
+      style="object-position: center; object-fit: cover"
+      class="w-100 h-100"
+    />
+  </div>
+  <div class="text-start mb-5">
+    <h3>{{ heading }}</h3>
+    <h2 class="mb-2">{{ subtitle }}</h2>
+    <p class="mb-4">
+      {{ copy }}
+    </p>
+    <secondary-button
+      style="
+        border-color: var(--copy-color);
+        color: var(--copy-color);
+        text-transform: capitalize;
+      "
+      [onClick]="onClick"
+      >{{ cta }}</secondary-button
+    >
+  </div>
+</div>

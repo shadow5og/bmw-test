@@ -1,0 +1,27 @@
+secondary-button {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  secondary-button {
+    width: 391px;
+  }
+}
+
+@media (min-width: 1024px) {
+  div {
+    flex-direction: row !important;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  div picture {
+    height: 100%;
+  }
+
+  div div {
+    display: flex;
+    flex-direction: column !important;
+    align-items: start;
+  }
+}

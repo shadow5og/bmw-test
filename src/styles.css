@@ -179,7 +179,7 @@ h4 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: var(--copy-color);
   font-weight: 300;
   line-height: 1.5rem;
@@ -296,6 +296,13 @@ img {
   .button-wrapper {
     /* width: max-content; */
     /* min-width: 400px; */
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-button {
+    /* margin-right: 1.5rem; */
+    margin-left: 0px;
   }
 }
 

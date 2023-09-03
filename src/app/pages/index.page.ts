@@ -16,6 +16,7 @@ import { ExploreButtonsComponent } from '../components/buttons/explore-buttons/e
 import { NewBmwSectionComponent } from '../components/sections/new-bmw-section/new-bmw-section.component';
 import { VideoCtaSectionComponent } from '../components/sections/video-cta-section/video-cta-section.component';
 import { DividerComponent } from '../components/layput/divider/divider.component';
+import { CtaWithCopySectionComponent } from '../components/sections/cta-with-copy-section/cta-with-copy-section.component';
 
 @Component({
   selector: 'app-home',
@@ -28,6 +29,7 @@ import { DividerComponent } from '../components/layput/divider/divider.component
       <divider />
       <new-bmw-section />
       <divider />
+      <cta-with-copy-section />
     </main>
   `,
   styles: [``],
@@ -45,6 +47,7 @@ import { DividerComponent } from '../components/layput/divider/divider.component
     NewBmwSectionComponent,
     VideoCtaSectionComponent,
     DividerComponent,
+    CtaWithCopySectionComponent,
   ],
 })
 export default class HomeComponent implements OnInit {

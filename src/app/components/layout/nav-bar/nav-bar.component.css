@@ -1,6 +1,6 @@
 nav {
   display: block;
-  z-index: 10;
+  z-index: 2000;
   font-family: var(--bmw-light);
   width: 20vw;
 }
@@ -16,6 +16,10 @@ nav div div a,
 
 i {
   font-size: 20px;
+}
+
+.panel {
+  height: 400px !important;
 }
 
 nav div ul {
@@ -36,6 +40,10 @@ nav div ul li {
 }
 
 nav div ul li:hover {
+  border-bottom-color: var(--primary-color);
+}
+
+.border-blue:hover {
   border-bottom-color: var(--primary-color);
 }
 

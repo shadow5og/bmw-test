@@ -25,7 +25,9 @@ import { BackgroundFilterComponent } from '../../generic/background-filter/backg
         BMW luxury class owners.
       </h4>
       <button-wrapper
-        ><secondary-button>Learn more</secondary-button></button-wrapper
+        ><secondary-button [onClick]="'http://bmwexcellenceclub.co.za/'"
+          >Learn more</secondary-button
+        ></button-wrapper
       >
     </section>
   `,

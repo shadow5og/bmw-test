@@ -11,7 +11,7 @@ import { SecondaryButtonComponent } from '../../buttons/secondary-button/seconda
       <img [src]="src" [alt]="alt" style="max-width: 348px" />
       <h4>{{ subtitle }}</h4>
       <secondary-button
-        [onClick]="goToLink"
+        [onClick]="ctaLink"
         style="border-color: black; color: black"
         class="w-100 px-3 w-auto"
         >{{ ctaText }}</secondary-button

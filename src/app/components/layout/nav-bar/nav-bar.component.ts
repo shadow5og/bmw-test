@@ -6,6 +6,10 @@ import {
 } from '@angular/core';
 import { NgbNavModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { PersonComponent } from '../../icons/person/person.component';
+import { SearchComponent } from '../../icons/search/search.component';
+import { CartComponent } from '../../icons/cart/cart.component';
+import { LocationComponent } from '../../icons/location/location.component';
 
 type Link =
   | {
@@ -24,8 +28,15 @@ type Link =
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css'],
   standalone: true,
-  imports: [NgbNavModule, CommonModule],
   encapsulation: ViewEncapsulation.None,
+  imports: [
+    NgbNavModule,
+    CommonModule,
+    PersonComponent,
+    SearchComponent,
+    CartComponent,
+    LocationComponent,
+  ],
 })
 export class NavBarComponent implements OnInit {
   active = 0;

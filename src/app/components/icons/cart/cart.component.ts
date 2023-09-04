@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'divider',
+  selector: 'cart-icon',
   standalone: true,
   imports: [CommonModule],
-  template: ` <div class="bg-white" style="height: 25px"></div> `,
-  styles: [``],
+  template: ` <i class="bi bi-cart2"></i>`,
+  styles: [''],
 })
-export class DividerComponent {}
+export class CartComponent {}

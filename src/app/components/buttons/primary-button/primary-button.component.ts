@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -21,18 +21,23 @@ import { CommonModule } from '@angular/common';
     `,
   ],
 })
-export class PrimaryButtonComponent implements OnInit {
-  @Input() onClick?: () => void;
+export class PrimaryButtonComponent {
+  @Input() onClick?: (() => void) | string;
   @Input() styling?: {
     [klass: string]: any;
   };
   @Input() style: string = '';
 
   handleClick() {
-    if (this.onClick) this?.onClick();
+    if (typeof this?.onClick !== 'string') {
+      const onClickFunction = this.onClick as () => void;
+      onClickFunction();
+    } else window.open(this.onClick, '_blank');
   }
 
-  ngOnInit(): void {
-    console.log(this.styling);
-  }
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes['onClick']) {
+  //     this.onClick = changes['onClick'].currentValue;
+  //   }
+  // }
 }

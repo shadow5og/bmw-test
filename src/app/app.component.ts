@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './components/layout/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,7 @@ import { NavBarComponent } from './components/layout/nav-bar/nav-bar.component';
   template: `
     <nav-bar />
     <router-outlet></router-outlet>
+    <app-footer />
   `,
   styles: [
     `
@@ -19,6 +21,6 @@ import { NavBarComponent } from './components/layout/nav-bar/nav-bar.component';
       }
     `,
   ],
-  imports: [RouterOutlet, NavBarComponent],
+  imports: [RouterOutlet, NavBarComponent, FooterComponent],
 })
 export class AppComponent {}

@@ -15,7 +15,7 @@ import {
 import { ExploreButtonsComponent } from '../components/buttons/explore-buttons/explore-buttons.component';
 import { NewBmwSectionComponent } from '../components/sections/new-bmw-section/new-bmw-section.component';
 import { VideoCtaSectionComponent } from '../components/sections/video-cta-section/video-cta-section.component';
-import { DividerComponent } from '../components/layput/divider/divider.component';
+import { DividerComponent } from '../components/layout/divider/divider.component';
 import { CtaWithCopySectionComponent } from '../components/sections/cta-with-copy-section/cta-with-copy-section.component';
 
 @Component({

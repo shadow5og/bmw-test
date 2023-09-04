@@ -20,6 +20,7 @@ export class SideBySideContentComponent {
     'https://bmw.scene7.com/is/image/BMW/iPad_Holder_Fitted:16to9?fmt=webp&amp;wid=2560&amp;hei=1434';
   @Input() alt = '';
   @Input() isImage = false;
+  @Input() flip = false;
 
   onClick() {
     window.open(this.ctaLink, '_blank');

@@ -24,4 +24,8 @@ secondary-button {
     flex-direction: column !important;
     align-items: start;
   }
+
+  div div:last-child {
+    padding-top: 74px;
+  }
 }

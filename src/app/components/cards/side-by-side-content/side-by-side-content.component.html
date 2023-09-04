@@ -1,5 +1,5 @@
 <div class="d-flex flex-column">
-  <div class="mb-5">
+  <div class="mb-5" [ngClass]="flip ? 'order-lg-2' : ''">
     <ng-content *ngIf="!isImage"></ng-content>
     <img
       *ngIf="isImage"
@@ -9,7 +9,7 @@
       class="w-100 h-100"
     />
   </div>
-  <div class="text-start mb-5">
+  <div class="text-start mb-5" [ngClass]="flip ? 'order-lg-1' : ''">
     <h3>{{ heading }}</h3>
     <h2 class="mb-2">{{ subtitle }}</h2>
     <p class="mb-4">

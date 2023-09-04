@@ -9,8 +9,13 @@ nav p span {
   font-family: var(--bmw-bold);
 }
 
-nav div div a {
+nav div div a,
+.nav-icon {
   border-bottom: 4px transparent solid;
+}
+
+i {
+  font-size: 20px;
 }
 
 nav div ul {
@@ -49,6 +54,14 @@ nav div ul li a span {
   color: white;
   /* width: max-content; */
 }
+
+.nav-icon {
+  color: white !important;
+}
+
+/* .nav-icon:hover {
+  color: var(--primary-effect);
+} */
 
 @media (min-width: 1200px) {
   nav div div:first-child {

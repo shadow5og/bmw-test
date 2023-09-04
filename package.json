@@ -29,6 +29,7 @@
     "@nx/angular": "^16.4.0",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
     "front-matter": "^4.0.2",
     "marked": "^5.0.2",
     "marked-gfm-heading-id": "^3.0.4",

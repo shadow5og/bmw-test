@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './components/layout/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,6 @@ import { FooterComponent } from './components/layout/footer/footer.component';
       }
     `,
   ],
-  imports: [RouterOutlet, NavBarComponent, FooterComponent],
+  imports: [RouterOutlet, NavBarComponent, FooterComponent, NgbAccordionModule],
 })
 export class AppComponent {}

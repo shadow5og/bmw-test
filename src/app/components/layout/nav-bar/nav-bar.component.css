@@ -1,6 +1,10 @@
+button {
+  box-shadow: none !important;
+}
+
 nav {
   display: block;
-  z-index: 2000;
+  z-index: 1500;
   font-family: var(--bmw-light);
   width: 20vw;
 }
@@ -19,7 +23,7 @@ i {
 }
 
 .panel {
-  height: 400px !important;
+  height: fit-content !important;
 }
 
 nav div ul {

@@ -8,7 +8,11 @@ import {
   ElementRef,
   OnDestroy,
 } from '@angular/core';
-import { NgbNavModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbNavModule,
+  NgbOffcanvas,
+  NgbAccordionModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { PersonComponent } from '../../icons/person/person.component';
 import { SearchComponent } from '../../icons/search/search.component';
@@ -41,6 +45,7 @@ type Link =
     SearchComponent,
     CartComponent,
     LocationComponent,
+    NgbAccordionModule,
   ],
 })
 export class NavBarComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -49,7 +54,7 @@ export class NavBarComponent implements OnInit, OnDestroy, AfterViewInit {
   @ViewChild('nav', { static: false }) nav: ElementRef<HTMLElement> | undefined;
   closed = true;
   subscription: Subscription | undefined;
-  accessibleElelemnt: HTMLElement | undefined;
+  accessibleElement: HTMLElement | undefined;
 
   links: Link[] = [
     { name: 'Models', href: 'https://www.bmw.co.za/en/all-models.html' },
@@ -71,25 +76,35 @@ export class NavBarComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(private offcanvasService: NgbOffcanvas) {}
 
-  openTop(content: TemplateRef<any>) {
-    this.offcanvasService.open(content, {
-      position: 'top',
-      panelClass: 'mt-5 panel',
-    });
-    this.megaMenuOpen(this.accessibleElelemnt!);
+  openTop(content: TemplateRef<HTMLElement>) {
+    if (this.offcanvasService.hasOpenOffcanvas()) {
+    } else {
+      this.offcanvasService.open(content, {
+        position: 'top',
+        panelClass: 'panel',
+      });
+      this.megaMenuOpen(this.accessibleElement!);
+    }
+  }
+
+  opentMobile(mobile: TemplateRef<HTMLElement>) {
+    if (this.offcanvasService.hasOpenOffcanvas()) {
+    } else {
+      this.offcanvasService.open(mobile, {
+        position: 'end',
+        panelClass: 'vw-100',
+      });
+      this.megaMenuOpen(this.accessibleElement!);
+    }
   }
 
   megaMenuOpen(element: HTMLElement) {
     this.offcanvasService;
     if (this.offcanvasService.hasOpenOffcanvas()) {
       element.style.transition = 'all 1s ease-in-out';
-      element.style.color = 'black';
-      element.style.backgroundColor = 'black';
-      element.style.borderColor = 'black';
+      element.style.backgroundColor = 'var(--copy-color)';
     } else {
-      element.style.color = 'white';
       element.style.backgroundColor = 'transparent';
-      element.style.borderColor = 'white';
     }
   }
 
@@ -97,7 +112,7 @@ export class NavBarComponent implements OnInit, OnDestroy, AfterViewInit {
     this.subscription = this.offcanvasService.activeInstance.subscribe(
       (element) => {
         element?.hidden.subscribe(() => {
-          this.megaMenuOpen(this.accessibleElelemnt!);
+          this.megaMenuOpen(this.accessibleElement!);
         });
       }
     );
@@ -108,6 +123,6 @@ export class NavBarComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.accessibleElelemnt = this.nav?.nativeElement as HTMLElement;
+    this.accessibleElement = this.nav?.nativeElement as HTMLElement;
   }
 }

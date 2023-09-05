@@ -37,18 +37,17 @@
             ><search-icon
           /></a>
         </div>
-        <button
-          class="navbar-toggler border-0 px-0"
-          style="box-shadow: none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarBasic"
-          aria-controls="navbarBasic"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <i class="bi bi-list" style="font-size: 35px; color: white"></i>
-        </button>
+        <div class="h-100 pb-1">
+          <button
+            class="navbar-toggler border-0 px-0 h-100 d-flex align-items-center"
+            style="box-shadow: none"
+            type="button"
+            data-bs-toggle="collapse"
+            (click)="opentMobile(mobile)"
+          >
+            <i class="bi bi-list" style="font-size: 35px; color: white"></i>
+          </button>
+        </div>
       </div>
       <div class="collapse navbar-collapse" id="navbarBasic">
         <ul class="navbar-nav me-auto mb-2 mb-xl-0">
@@ -100,7 +99,7 @@
   <div
     class="offcanvas-header"
     [ngStyle]="{
-      'margin-top.px': this.accessibleElelemnt?.offsetHeight ?? 0
+      'padding-top.px': this.accessibleElement?.offsetHeight ?? 0 + 100
     }"
   >
     <h4 class="offcanvas-title">The Page is reponsive :) - Nkuli</h4>
@@ -113,14 +112,66 @@
   </div>
   <div class="offcanvas-body">
     <p>Mega Menu Content</p>
-    <div class="text-end">
-      <button
-        type="button"
-        class="btn btn-outline-dark"
-        (click)="offcanvas.close('Close click')"
-      >
-        Close
-      </button>
+    <div class="text-end"></div>
+  </div>
+</ng-template>
+
+<ng-template #mobile let-offcanvas>
+  <div
+    class="offcanvas-header"
+    [ngStyle]="{
+      'margin-top.px': this.accessibleElement?.offsetHeight ?? 0
+    }"
+  >
+    <h4 class="offcanvas-title">The Page is reponsive :) - Nkuli</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="offcanvas.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div ngbAccordion *ngFor="let link of links">
+      <div ngbAccordionItem style="background-color: transparent; border: none">
+        <h2
+          ngbAccordionHeader
+          class="bg-transparent"
+          style="background-color: transparent !important"
+        >
+          <button
+            ngbAccordionButton
+            style="
+              box-shadow: none;
+              background-color: transparent;
+              height: 20px;
+              font-family: var(--bmw-bold);
+              text-transform: capitalize;
+              padding-left: 0px;
+              padding-right: 0px;
+            "
+          >
+            {{ link.name }}
+          </button>
+        </h2>
+        <div ngbAccordionCollapse>
+          <div ngbAccordionBody class="ms-4 text-start px-0">
+            <ng-template>
+              <ul class="list-unstyled d-flex flex-column gap-3">
+                <li *ngFor="let item of [1, 2, 3]">
+                  <a
+                    [href]="link.href ?? '#'"
+                    class="text-decoration-none"
+                    style="color: var(--copy-color)"
+                    >{{ "Something " + item }}</a
+                  >
+                </li>
+              </ul>
+            </ng-template>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="text-end"></div>
   </div>
 </ng-template>
